@@ -19,19 +19,14 @@ export default new Router({
       component: () => import('./views/About')
     },
     {
-      path: '/cap',
-      name: 'cap',
-      component: () => import('./views/Cap')
-    },
-    {
       path: '/body',
       name: 'body',
-      component: () => import('./views/Body')
+      component: () => import('./views/catalog/Body')
     },
     {
-      path: '/cartridge',
-      name: 'cartridge',
-      component: () => import('./views/Cartridge')
+      path: '/cap',
+      name: 'cap',
+      component: () => import('./views/catalog/Cap')
     }
   ]
 })

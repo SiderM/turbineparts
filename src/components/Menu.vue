@@ -18,7 +18,6 @@
                 menuItems: [
                     {title: 'Крышка', link: 'cap'},
                     {title: 'Корпус', link: 'body'},
-                    {title: 'Картридж', link: 'cartridge'},
                 ]
             }
         }

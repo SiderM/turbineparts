@@ -8,7 +8,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr v-for="part in parts" :key="part.id + Date.now()">
+    <tr v-for="part in parts" :key="part._id.$oid">
       <th scope="row">{{part.id}}</th>
       <td>{{part.title}}</td>
       <td>{{part.price}}</td>
