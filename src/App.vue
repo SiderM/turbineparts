@@ -1,10 +1,14 @@
 <template>
   <div>
     <div>
-      <router-link to="/">Home</router-link>
-      |
-      <router-link to="/about">About</router-link>
+      <Menu/>
     </div>
     <router-view/>
   </div>
 </template>
+<script>
+    import Menu from "./components/Menu";
+    export default {
+        components: {Menu}
+    }
+</script>
