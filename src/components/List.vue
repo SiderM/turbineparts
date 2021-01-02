@@ -1,15 +1,21 @@
 <template>
   <div>
     <input type="text" v-model="searchQuery">
-    <Table :parts="filteredParts"/>
+    <div v-if="isLoading">Load...</div>
+    <Table v-else :parts="filteredParts"/>
   </div>
 </template>
 
 <script>
     import Table from "@/components/Table";
     export default {
-        name: "Body",
+        name: "List",
         components: {Table},
+        props: {
+            name: {
+                type: String
+            }
+        },
         data() {
             return {
                 parts: [],
@@ -18,11 +24,12 @@
         },
         computed: {
             filteredParts() {
-                return this.parts.filter(part => part.title.includes(this.searchQuery.toLowerCase()))
+                return this.parts.filter(part => part.title.toLowerCase().includes(this.searchQuery.toLowerCase()))
             }
         },
-        created() {
-            let uri = `${process.env.BASE_URL}parts/${this.$route.name}.json`
+
+        mounted() {
+            let uri = `${process.env.BASE_URL}parts/${this.name}.json`
             this.axios.get(uri).then(response => this.parts = response.data)
         }
     }

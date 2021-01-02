@@ -1,12 +1,12 @@
 <template>
   <div>
-    <router-link
+    <button
             v-for="item in menuItems"
             :key="item.link + 1"
-            :to="item.link"
+            @click="$emit('link', item.link)"
     >
       {{item.title}}
-    </router-link>
+    </button>
   </div>
 </template>
 
@@ -18,6 +18,7 @@
                 menuItems: [
                     {title: 'Крышка', link: 'cap'},
                     {title: 'Корпус', link: 'body'},
+                    {title: 'Корпус', link: 'clamp'},
                 ]
             }
         }
