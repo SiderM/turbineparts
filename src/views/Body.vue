@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="text" v-model="squery">
+    <input type="text" v-model="searchQuery">
     <Table :parts="filteredParts"/>
   </div>
 </template>
@@ -13,16 +13,16 @@
         data() {
             return {
                 parts: [],
-                squery: ''
+                searchQuery: ''
             }
         },
         computed: {
             filteredParts() {
-                return this.parts.filter(part => part.title.includes(this.squery))
+                return this.parts.filter(part => part.title.includes(this.searchQuery.toLowerCase()))
             }
         },
         created() {
-            let uri = process.env.BASE_URL + 'parts/body.json';
+            let uri = `${process.env.BASE_URL}parts/${this.$route.name}.json`
             this.axios.get(uri).then(response => {
                 this.parts = response.data;
             });

@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import Cap from "./views/Cap";
-import Body from "./views/Body";
 
 Vue.use(Router)
 
@@ -23,12 +21,12 @@ export default new Router({
     {
       path: '/cap',
       name: 'cap',
-      component: Cap
+      component: () => import('./views/Cap')
     },
     {
       path: '/body',
       name: 'body',
-      component: Body
+      component: () => import('./views/Body')
     },
     {
       path: '/cartridge',
