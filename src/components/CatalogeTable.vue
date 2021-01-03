@@ -14,7 +14,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr v-for="part in filteredParts" :key="part._id.$oid">
+      <tr v-for="part in filteredParts" :key="part._id.$oid" style="cursor: pointer;">
         <th scope="row" v-if="part.id !== null">{{part.id}}</th>
         <th scope="row" v-else>Нет номера</th>
         <td colspan="3">{{part.title}}</td>
