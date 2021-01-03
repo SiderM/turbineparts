@@ -1,26 +1,20 @@
 <template>
-  <div>
-    <div>
-      <Menu @link="getCat"/>
+  <div class="container-fluid">
+    <AppHeader/>
+    <div class="row mt-3">
+      <div class="col-3">
+        <CatalogeMenu/>
+      </div>
+      <div class="col">
+        <router-view/>
+      </div>
     </div>
-    <List v-if="link != 'home'" :name="link" :key="link"/>
-    <div v-else>dgdfg</div>
   </div>
 </template>
 <script>
-    import Menu from "./components/Menu";
-    import List from "./components/List";
+    import CatalogeMenu from "./components/CatalogeMenu";
+    import AppHeader from "./components/AppHeader";
     export default {
-        components: {List, Menu},
-        data() {
-            return {
-                link: 'home'
-            }
-        },
-        methods: {
-            getCat(name) {
-                this.link = name
-            }
-        }
+        components: {AppHeader, CatalogeMenu}
     }
 </script>
