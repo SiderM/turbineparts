@@ -1,11 +1,11 @@
 <template>
   <div>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#openModal">
-      <i class="bi bi-question-circle"></i>
+      <i class="bi bi-question-circle"></i> Помощь
     </button>
 
     <div class="modal fade" id="openModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Название инструкции</h5>
@@ -13,6 +13,7 @@
           </div>
           <div class="modal-body">
             Текст инструкции
+            {{instruction}}
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Закрыть</button>
@@ -25,7 +26,7 @@
 
 <script>
     export default {
-        name: "CatalogeButton",
+        name: "CatalogeModal",
         props: {
             instruction: {
                 type: String

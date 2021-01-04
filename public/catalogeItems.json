@@ -1,6 +1,6 @@
 [
   {"title": "Вал", "link": "shaft"},
-  {"title": "Втулка", "link": "sleeve"},
+  {"title": "Втулка, Подшипник", "link": "sleeve"},
   {"title": "Гайка", "link": "nut"},
   {"title": "Геометрия", "link": "geometry"},
   {"title": "Зажим", "link": "clamp"},
