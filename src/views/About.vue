@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div>Instructions Page</div>
+    О приложении
   </div>
 </template>
 
 <script>
     export default {
-        name: "Instructions"
+        name: "About"
     }
 </script>
 

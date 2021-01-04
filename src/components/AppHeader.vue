@@ -8,7 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <router-link class="nav-link" exact-active-class="active" to="/">Инструкции</router-link>
+            <router-link class="nav-link" exact-active-class="active" to="/">О приложении</router-link>
           </li>
         </ul>
       </div>

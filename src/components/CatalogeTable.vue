@@ -81,7 +81,7 @@
 
   tbody {
     overflow-y: scroll;
-    height: 75vh;
+    height: 72vh;
     position: absolute;
   }
 </style>

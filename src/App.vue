@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <AppHeader/>
     <div class="row mt-3">
-      <div class="col-3">
+      <div class="col-2">
         <CatalogeMenu/>
       </div>
       <div class="col">

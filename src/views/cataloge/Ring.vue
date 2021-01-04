@@ -6,15 +6,15 @@
 </template>
 
 <script>
-    import CatalogeTable from "../components/CatalogeTable";
+    import CatalogeTable from '@/components/CatalogeTable';
     export default {
-        name: "Body",
+        name: "Ring",
         components: {CatalogeTable},
         data() {
             return {
                 searchQuery: ''
             }
-        },
+        }
     }
 </script>
 
