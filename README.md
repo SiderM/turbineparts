@@ -7,7 +7,7 @@
 
 
 
-_Live: https://https://turbineparts.vercel.app_
+_Live: https://turbineparts.vercel.app_
 
 ### Настройка
 
