@@ -73,14 +73,14 @@
         },
         computed: {
             filteredParts() {
-      
                 return this.parts.filter(part => part.title.toLowerCase().includes(this.searchQuery.toLowerCase()))
-              
-              
             },
             filteredPartsByNumber() {
-      
-                return this.parts.filter(part => part.id.toLowerCase().includes(this.searchNumber.toLowerCase()))
+                return this.parts.filter(part => {
+                  if(part.id != null) {
+                    return part.id.toLowerCase().includes(this.searchNumber.toLowerCase())
+                  }
+                })
               
               
             }
