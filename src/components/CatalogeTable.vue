@@ -13,8 +13,30 @@
         <th scope="col">Цена (курс ЦБ)</th>
       </tr>
       </thead>
-      <tbody>
+      <tbody v-if="searchNumber">
+        <tr v-for="part in filteredPartsByNumber" :key="part._id.$oid" style="cursor: pointer;">
+        <th scope="row" v-if="part.id !== null">{{part.id}}</th>
+        <th scope="row" v-else>Нет номера</th>
+        <td colspan="3">{{part.title}}</td>
+        <td v-if="part.price !== null">{{part.price}} $</td>
+        <td v-else>Нет цены</td>
+        <td v-if="part.price !== null">{{parseInt(Number(part.price) / usd)}} руб.</td>
+        <td v-else>Нет цены</td>
+      </tr>
+      </tbody>
+      <tbody v-else-if="searchQuery">
       <tr v-for="part in filteredParts" :key="part._id.$oid" style="cursor: pointer;">
+        <th scope="row" v-if="part.id !== null">{{part.id}}</th>
+        <th scope="row" v-else>Нет номера</th>
+        <td colspan="3">{{part.title}}</td>
+        <td v-if="part.price !== null">{{part.price}} $</td>
+        <td v-else>Нет цены</td>
+        <td v-if="part.price !== null">{{parseInt(Number(part.price) / usd)}} руб.</td>
+        <td v-else>Нет цены</td>
+      </tr>
+      </tbody>
+      <tbody v-else>
+        <tr v-for="part in parts" :key="part._id.$oid" style="cursor: pointer;">
         <th scope="row" v-if="part.id !== null">{{part.id}}</th>
         <th scope="row" v-else>Нет номера</th>
         <td colspan="3">{{part.title}}</td>
@@ -37,6 +59,9 @@
             },
             searchQuery: {
                 type: String
+            },
+            searchNumber: {
+              type: String
             }
         },
         data() {
@@ -48,7 +73,16 @@
         },
         computed: {
             filteredParts() {
+      
                 return this.parts.filter(part => part.title.toLowerCase().includes(this.searchQuery.toLowerCase()))
+              
+              
+            },
+            filteredPartsByNumber() {
+      
+                return this.parts.filter(part => part.id.toLowerCase().includes(this.searchNumber.toLowerCase()))
+              
+              
             }
         },
         methods: {

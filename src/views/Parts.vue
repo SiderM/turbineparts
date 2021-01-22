@@ -4,14 +4,17 @@
       <div class="col-2">
         <h5>Поиск детали:</h5>
       </div>
-      <div class="col-8">
+      <div class="col-4">
+        <input type="text" class="form-control" placeholder="Номер детали..." v-model="searchNumber">
+      </div>
+      <div class="col-4">
         <input type="text" class="form-control" placeholder="Модель турбины или размеры..." v-model="searchQuery">
       </div>
       <div class="col-2">
         <CatalogeModal :instruction="$route.params.name"/>
       </div>
     </div>
-    <CatalogeTable :category="$route.params.name" :search-query="searchQuery" :key="$route.params.name"/>
+    <CatalogeTable :category="$route.params.name" :search-number="searchNumber" :search-query="searchQuery" :key="$route.params.name"/>
   </div>
 </template>
 
@@ -24,7 +27,8 @@
         components: {CatalogeModal, CatalogeTable},
         data() {
             return {
-                searchQuery: ''
+                searchQuery: '',
+                searchNumber: ''
             }
         }
     }
